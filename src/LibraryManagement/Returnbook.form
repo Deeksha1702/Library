@@ -304,12 +304,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="txtmname">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel8"/>
+            <Property name="text" type="java.lang.String" value="Member Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="txtbook">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel9"/>
+            <Property name="text" type="java.lang.String" value="Book"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
@@ -323,18 +323,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtelp">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtfine">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="txtrdate">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel7"/>
+            <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
         </Component>
       </SubComponents>

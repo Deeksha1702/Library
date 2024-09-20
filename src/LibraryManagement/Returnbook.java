@@ -179,19 +179,15 @@ public class Returnbook extends javax.swing.JFrame {
 
         jLabel6.setText("Book :");
 
-        txtmname.setText("jLabel8");
+        txtmname.setText("Member Name");
 
-        txtbook.setText("jLabel9");
+        txtbook.setText("Book");
 
         jLabel10.setText("Days Elapsed :");
 
         jLabel11.setText("Fine :");
 
-        txtelp.setText("jTextField1");
-
-        txtfine.setText("jTextField2");
-
-        txtrdate.setText("jLabel7");
+        txtrdate.setText("Date");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
