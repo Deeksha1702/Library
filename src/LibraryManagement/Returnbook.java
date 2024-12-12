@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JDateChooser;
+import java.math.BigDecimal;
 
  
 public class Returnbook extends javax.swing.JFrame {
@@ -49,7 +50,7 @@ public class Returnbook extends javax.swing.JFrame {
            java.sql.ResultSetMetaData rsd = rs.getMetaData();
             c = rsd.getColumnCount();
             
-            DefaultTableModel d = (DefaultTableModel)jTable1.getModel();
+            DefaultTableModel d = (DefaultTableModel) jTable1.getModel();
             d.setRowCount(0);
             
             while(rs.next())
@@ -94,10 +95,10 @@ public class Returnbook extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtmname = new javax.swing.JLabel();
-        txtbook = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        txtmname = new javax.swing.JLabel();
+        txtbook = new javax.swing.JLabel();
         txtelp = new javax.swing.JTextField();
         txtfine = new javax.swing.JTextField();
         txtrdate = new javax.swing.JLabel();
@@ -179,15 +180,23 @@ public class Returnbook extends javax.swing.JFrame {
 
         jLabel6.setText("Book :");
 
-        txtmname.setText("Member Name");
+        jLabel10.setText("Days Elaped :");
 
-        txtbook.setText("Book");
-
-        jLabel10.setText("Days Elapsed :");
-
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Fine :");
 
-        txtrdate.setText("Date");
+        txtmname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtmname.setText("jLabel7");
+
+        txtbook.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtbook.setText("jLabel8");
+
+        txtelp.setText("jTextField1");
+
+        txtfine.setText("jTextField2");
+
+        txtrdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtrdate.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,27 +222,27 @@ public class Returnbook extends javax.swing.JFrame {
                                             .addComponent(jLabel11))))
                                 .addGap(27, 27, 27)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtmid, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                    .addComponent(txtmid, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                                     .addComponent(txtmname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtbook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtelp)
                                     .addComponent(txtfine)
-                                    .addComponent(txtrdate)))
+                                    .addComponent(txtrdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(jLabel3)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,11 +261,11 @@ public class Returnbook extends javax.swing.JFrame {
                             .addComponent(txtmname))
                         .addGap(12, 12, 12)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(txtbook))
-                        .addGap(29, 29, 29)
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtrdate))
@@ -277,7 +286,7 @@ public class Returnbook extends javax.swing.JFrame {
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -311,11 +320,11 @@ public class Returnbook extends javax.swing.JFrame {
             pst.setString(3,bookname);
             pst.setString(4,returndate);
             pst.setString(5,elpdays);
-            pst.setString(6,fine );
+            pst.setString(6, fine);
             
             int k = pst.executeUpdate();
             
-            pst = con.prepareStatement("delete from ibook where  memberid =?");
+            pst = con.prepareStatement("delete from ibook where  memberid = ?");
             pst.setString(1,mid);
             pst.executeUpdate();
             
@@ -368,11 +377,10 @@ public class Returnbook extends javax.swing.JFrame {
        
         
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
-        {
-           
+        {   
         String id = txtmid.getText();
         try {
-            pst = con.prepareStatement("select m.name,b.bname, ib.returndate,DATEDIFF(now(),ib.returndate) as elap from ibook ib JOIN member m ON ib.memberid = m.id JOIN book b ON ib.bookid=b.id and ib.memberid=?");
+            pst = con.prepareStatement("select m.name,b.bname,ib.returndate,DATEDIFF(now(),ib.returndate) as elp from ibook ib JOIN member m ON ib.memberid = m.id JOIN book b ON ib.bookid=b.id and ib.memberid = ?");
             pst.setString(1, id);
             rs =pst.executeQuery();
             
@@ -390,13 +398,13 @@ public class Returnbook extends javax.swing.JFrame {
                 
                 String date = rs.getString("ib.returndate");
                 txtrdate.setText(date);
-                String elp = rs.getString("elap");
+                String elp = rs.getString("elp");
                 
                 int elaped = Integer.parseInt(elp);
                 if(elaped>0)
                 {
                    txtelp.setText(elp);
-                   int fine = elaped*100;
+                   int fine = elaped * 10;
                    txtfine.setText(String.valueOf(fine));
                 }
                 else

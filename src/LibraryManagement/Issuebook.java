@@ -42,7 +42,8 @@ public class Issuebook extends javax.swing.JFrame {
     {
         int id;
         String name;
-        public BookItem(int id,String name)
+        
+        public BookItem(int id, String name)
         {
             this.id=id;
             this.name=name;
@@ -56,7 +57,7 @@ public class Issuebook extends javax.swing.JFrame {
     {
         try {
             pst = con.prepareStatement("select * from book");
-            rs =pst.executeQuery();
+            rs = pst.executeQuery();
             txtbook.removeAllItems();
             
             while(rs.next())
@@ -279,9 +280,9 @@ public class Issuebook extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txtbook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtbook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -318,30 +319,33 @@ public class Issuebook extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String mid = txtid.getText();
-       BookItem bitem = (BookItem) txtbook.getSelectedItem();
+       BookItem selectedBook = (BookItem) txtbook.getSelectedItem();
+       
+       String bookName = selectedBook.name;
+       int bookId = selectedBook.id;
+       
        SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd"); 
        String issuedate = date_format.format(txtidate.getDate()); 
+       
        SimpleDateFormat date_format1 = new SimpleDateFormat("yyyy-MM-dd"); 
        String returndate = date_format1.format(txtrdate.getDate());
        
         try {
             pst = con.prepareStatement("insert into ibook(memberid,bookid,issuedate,returndate)values(?,?,?,?)");
             pst.setString(1,mid);
-            pst.setInt(2,bitem.id);
-            pst.setString(3,issuedate);
-            pst.setString(4,returndate);
+            pst.setInt(2,bookId);
+            pst.setString(3, issuedate);
+            pst.setString(4, returndate);
             
             int k = pst.executeUpdate();
             
             if(k == 1)
             {
-                JOptionPane.showMessageDialog(this, "Book Issued!!!");
+               JOptionPane.showMessageDialog(this, "Book Issued!!!");
                txtid.setText("");
                txtbook.setSelectedIndex(-1);
                txtmember.setText("");
-               issuebook_Load();
-                
-                
+               issuebook_Load();    
             }
             else
             {
@@ -385,6 +389,7 @@ public class Issuebook extends javax.swing.JFrame {
             pst = con.prepareStatement("select * from member where id=?");
              pst.setString(1, mid);
              rs = pst.executeQuery();
+             
              if(rs.next()==false)
              {
                  JOptionPane.showMessageDialog(this,"Member ID not found");
